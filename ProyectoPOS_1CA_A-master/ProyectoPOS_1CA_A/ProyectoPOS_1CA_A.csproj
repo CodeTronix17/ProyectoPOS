@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1AD16B58-403D-4191-AF84-4DEA7D416B77}</ProjectGuid>
+    <ProjectGuid>{F9C077A3-44C9-4361-A512-A2BF86685669}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Proyecto_POS</RootNamespace>
-    <AssemblyName>Proyecto POS</AssemblyName>
+    <RootNamespace>ProyectoPOS_1CA_A</RootNamespace>
+    <AssemblyName>ProyectoPOS_1CA_A</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,39 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaEntidades\Cliente.cs" />
     <Compile Include="CapaEntidades\Producto.cs" />
     <Compile Include="CapaEntidades\Validaciones.cs" />
-    <Compile Include="CapaPresentación\Clientes.cs">
+    <Compile Include="CapaPresentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentación\Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentación\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapaPresentación\Form1.Designer.cs">
+    <Compile Include="CapaPresentacion\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentación\frmClientes.cs">
+    <Compile Include="CapaPresentacion\FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentación\frmProducto.cs">
+    <Compile Include="CapaPresentacion\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentación\frmProducto.Designer.cs">
-      <DependentUpon>frmProducto.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CapaPresentación\Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="CapaEntidades\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentación\Form1.resx">
+    <EmbeddedResource Include="CapaPresentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentación\frmProducto.resx">
-      <DependentUpon>frmProducto.cs</DependentUpon>
+    <EmbeddedResource Include="CapaPresentacion\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,23 +107,31 @@
   <ItemGroup>
     <Folder Include="CapaDatos\" />
     <Folder Include="CapaNegocio\" />
+    <Folder Include="Recursos\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Dulce.png" />
+    <None Include="Resources\Gemini_Generated_Image_u3u1r0u3u1r0u3u1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recursos\clientes.png" />
-    <Content Include="Recursos\corte de caja.png" />
-    <Content Include="Recursos\exit.png" />
-    <Content Include="Recursos\inventario.png" />
-    <Content Include="Recursos\productos.png" />
-    <Content Include="Recursos\venta rapida.png" />
-    <None Include="Resources\exit.png" />
-    <None Include="Resources\corte de caja.png" />
-    <None Include="Resources\inventario.png" />
-    <None Include="Resources\clientes.png" />
-    <None Include="Resources\productos.png" />
-    <None Include="Resources\venta rapida.png" />
+    <None Include="Resources\terms-check_17818045.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store-alt_7653280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter-alt-circle_12107562.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-invoice-dollar_7928219.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-invoice-dollar_7928219 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-backup_19006204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_3917711.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
