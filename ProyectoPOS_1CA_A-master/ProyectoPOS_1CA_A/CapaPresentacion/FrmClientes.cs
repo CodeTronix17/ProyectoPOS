@@ -18,6 +18,23 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             InitializeComponent();
         }
         private static List<Cliente> listaCliente = new List<Cliente>();
+        
+        private void DesabiliarBotones()
+        {
+          
+            btnLimpiar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnAgregarCliente.Enabled = true;
+        }
+        private void HabilitarBotones()
+        {
+            btnLimpiar.Enabled = true;
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnAgregarCliente.Enabled = false;
+        }
+
 
         private void Clientes_Load(object sender, EventArgs e)
         {
@@ -49,12 +66,13 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                     Nombre = "Carlos",
                     Apellido = "Rodríguez",
                     CorreoElectronico = "carlos.rodriguez@email.com",
-                    FechaNacimiento = new DateTime(1992, 3, 10),
+                    FechaNacimiento= new DateTime(1992, 3, 10),
                     Telefono = "809-555-9012",
                     Estado = true
                 });
             }
             RefrescarGrid();
+            DesabiliarBotones();
         }
         private void RefrescarGrid()
         {
@@ -176,6 +194,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefrescarGrid();
             LimpiarCampos();
+            DesabiliarBotones();
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -206,6 +225,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefrescarGrid();
                 LimpiarCampos();
+                DesabiliarBotones();
             }
         }
 
@@ -229,6 +249,11 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             dtpFechaNacimiento.Value = Convert.ToDateTime(dgvClientes.CurrentRow.Cells["FechaNacimiento"].Value);
             txtTelefono.Text = dgvClientes.CurrentRow.Cells["Telefono"].Value.ToString();
             chkEstado.Checked = (bool)dgvClientes.CurrentRow.Cells["Estado"].Value;
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarBotones();
         }
     }
 }

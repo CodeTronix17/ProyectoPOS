@@ -20,6 +20,22 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
         //Creacion de una lista estatica que simulara la DB
         public static List<Producto> listaProductos = new List<Producto>();
 
+        private void DesabilitarBotones()
+        {
+            btnLimpiar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnNuevo.Enabled = true;
+        }
+
+        private void HabilitarBotones()
+        {
+            btnLimpiar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnNuevo.Enabled = false;
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -60,7 +76,9 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                 });
             }
             RefrescarGrid();//mando a llamar el metodo para refrescar el datagridview
+            DesabilitarBotones();
         }
+
         //asignar la lista como DataSOurce al datagridview
         private void RefrescarGrid()
         {
@@ -213,6 +231,17 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefrescarGrid();//refrescar el datagridview
             LimpiarCampos();//limpiar los controles
+            DesabilitarBotones();
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarBotones();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -62,6 +62,7 @@
             this.dgvClientes.Size = new System.Drawing.Size(615, 132);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // groupBox1
             // 
@@ -179,9 +180,9 @@
             this.chkEstado.AutoSize = true;
             this.chkEstado.Location = new System.Drawing.Point(406, 115);
             this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(80, 17);
+            this.chkEstado.Size = new System.Drawing.Size(99, 17);
             this.chkEstado.TabIndex = 9;
-            this.chkEstado.Text = "checkBox1";
+            this.chkEstado.Text = "Activo/Inactivo";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // txtApellido
@@ -271,6 +272,7 @@
             this.Controls.Add(this.dgvClientes);
             this.Name = "Clientes";
             this.Text = "FrmClientes";
+            this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

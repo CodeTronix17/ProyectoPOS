@@ -15,6 +15,6 @@ namespace ProyectoPOS_1CA_A.CapaEntidades
         public decimal Precio { get; set; }
         public int Stock { get; set; }
         public bool Estado { get; set; }
-
+        public int Id_Categoria { get; set; }
     }
 }
